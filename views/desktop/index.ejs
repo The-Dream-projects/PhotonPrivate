@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/desktop/style.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Particle</title>
+</head>
+
+<%var logo={image: "images/favicon.ico" , text: "Photon" }%>
+
+  <body>
+    <div id="Container">
+
+      <div id="Slider-container">
+        <div class="Slider-Button" id="slider1" onclick="slide(this)">
+          <div id="ActiveSlider1" class="ActiveSlider"></div>
+        </div>
+        <div class="Slider-Button" id="slider2" onclick="slide(this)">
+          <div id="ActiveSlider2" class="ActiveSlider"></div>
+        </div>
+        <div class="Slider-Button" id="slider3" onclick="slide(this)">
+          <div id="ActiveSlider3" class="ActiveSlider"></div>
+        </div>
+        <div class="Slider-Button" id="slider4" onclick="slide(this)">
+          <div id="ActiveSlider4" class="ActiveSlider"></div>
+        </div>
+      </div>
+
+      <div id="Slides">
+        <div id="Slide1" class="Slide">
+          <div class="Logo">
+            <img src="<%= logo.image %>" alt="Logo">
+            <h3>
+              <%= logo.text %>
+            </h3>
+          </div>
+          <div class="Center" id="CenterSlide1">
+            <div id="Title">
+              <h2 id="slide1Title">Rilevatore Gas e Anidride carbonica</h2>
+            </div>
+          </div>
+        </div>
+        <div id="Slide2" class="Slide">
+          <div class="Logo">
+            <img src="<%= logo.image %>" alt="Logo">
+            <h3>
+              <%= logo.text %>
+            </h3>
+          </div>
+          <div class="Center">
+            <div id="Slide2-Left">
+              <div id="Slide2-LeftCenter">
+                <h1>Rilevatore</h1>
+                <p id="Slide2Text">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                  Incidunt minima placeat repudiandae, <br>
+                  vel velit nesciunt expedita blanditiis <br>
+                  aperiam officia dolores in saepe. <br>
+                  Aliquam nostrum dolor officia? Amet sapiente eum ullam!</p>
+              </div>
+            </div>
+            <div id="Slide2-Right">
+              <img src="images/GasDetector.svg" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+
+        <div id="Slide3" class="Slide">
+          <div class="Logo">
+            <img src="<%= logo.image %>" alt="Logo">
+            <h3>
+              <%= logo.text %>
+            </h3>
+          </div>
+          <div class="Center" id="CenterSlide2">
+            <div id="ComponentsSlider">
+              <div id="BreadboardContainer" class="ComponentsContainer">
+                <div id="BreadBoard">
+                  <img src="images/BreadBoard.png" alt="">
+                </div>
+                <p>Breadboard</p>
+              </div>
+              <div id="PhotonContainer" class="ComponentsContainer">
+                <div id="Photon">
+                  <img src="images/Photon.png" alt="">
+                </div>
+                <p>Photon</p>
+              </div>
+              <div id="Mq-2Container" class="ComponentsContainer">
+                <div id="Mq-2">
+                  <img src="images/Mq-2.png" alt="">
+                </div>
+                <p>Mq-2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="Slide4" class="Slide">
+          <div class="Logo">
+            <img src="<%= logo.image %>" alt="Logo">
+            <h3>
+              <%= logo.text %>
+            </h3>
+          </div>
+          <div class="Center" id="CenterSlide4">
+            <div id="ChartContainer">
+              <canvas id="line"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="/scripts/desktop/index.js"></script>
+
+</html>
