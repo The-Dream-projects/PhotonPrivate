@@ -44,7 +44,7 @@ global.io = io = require('socket.io')(http, {
     allowEIO3: true
 });
 
-var Particle = require('particle-api-js'); 
+/*var Particle = require('particle-api-js'); 
 var particle = new Particle();
 setInterval(() => {
 
@@ -59,7 +59,7 @@ particle.getVariable({ deviceId: '43004d000751373238323937', name: 'smoke', auth
         });
       });
 
-}, 500);
+}, 500);*/
 
 
 module.exports = app;

@@ -125,10 +125,10 @@ var scrolling = false;
       datasets: [{
         label: 'Purezza aria',
         data: [],
-        borderColor: '#3375F6',
+        backgroundColor: "#00ADED",
         pointBorderColor: "#FFFFFF",
         borderWidth: 2,
-      }]
+      }],
     },
     options: {
       reponsive: true,
@@ -142,7 +142,7 @@ var scrolling = false;
         },
         x: {
           grid: {
-            color: "#515962"
+            color: "#515962",
           }
         },
         myScale: {
@@ -152,6 +152,7 @@ var scrolling = false;
       }  
     }
   });
+
   
   const skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
   const down = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
