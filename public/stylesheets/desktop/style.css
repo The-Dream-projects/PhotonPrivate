@@ -134,6 +134,13 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  #Slide2Align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
   
   #Slide2-Left {
     width: 50%;
@@ -213,6 +220,7 @@
   }
   
   /* Slide4 */
+
   #ChartContainer {
     width: 80%;
     height: 80%;
