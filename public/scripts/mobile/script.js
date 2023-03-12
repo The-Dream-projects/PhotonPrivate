@@ -1,42 +1,75 @@
-/*//Animazione titolo slide1
-function typeEffect(element, speed) {
-  let text = element.innerHTML;
-  element.innerHTML = "";
 
-  let i = 0;
-  let timer = setInterval(function () {
-    if (i < text.length) {
-      element.append(text.charAt(i));
-      i++;
-    } else {
-      clearInterval(timer);
-    }
-  }, speed);
-}
+var io = io(window.location.origin);
+var isPaused = false;
 
-// application
-let speed = 140;
-let h1 = document.querySelector('h1');
-let delay = h1.innerHTML.length * speed + speed;
-
-// type affect to header
-
-typeEffect(h1, speed);*/
-
-let lineChart = document.querySelector('#line');
+io.on("ping", (data) => {
+    var v = new Date();
+    if(isPaused) { return; }
+  //   document.getElementById("value").innerHTML = data.val.toFixed(4);
+    addData(v.getHours() +":"+ v.getMinutes() + ":" + v.getSeconds(), data.val.toFixed(4));
+});
+let ctx = document.querySelector('#line');
 
 //Line Chart
-let line = new Chart(lineChart, {
+const myChart = new Chart(ctx, {
   type: 'line',
-  data: data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [{
-      label: 'My First Dataset',
-      data: [65, 59, 80, 81, 56, 55, 40],
-      fill: false,
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.1
-    }]
+  data: {
+    labels: [],
+    
   },
-  options: {}
+  options: {
+    reponsive: true,
+    animation: false,
+    scales: {
+      y: {
+        grid: {
+          color: "#515962",
+          beginAtZero: true
+        }
+      },
+      x: {
+        grid: {
+          color: "#515962",
+        }
+      },
+      myScale: {
+        type: 'logarithmic',
+        position: 'right', // `axis` is determined by the position as `'y'`
+      }
+    }  
+  }
 });
+
+
+const skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
+const down = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
+
+
+function pauseManager(v) {
+    if(isPaused == false) {
+        isPaused = true;
+        v.innerHTML = "Start";
+    } else {
+        isPaused = false;
+        v.innerHTML = "Pause";
+    }
+}
+
+function addData(label, data) {
+  if(myChart.data.labels.length > 50){
+      removeData(myChart);
+  }
+  myChart.data.labels.push(label);
+  myChart.data.datasets.forEach((dataset) => {
+      dataset.data.push(data);
+  });
+  myChart.update();
+}
+
+function removeData(chart) {
+  chart.data.labels.shift();
+  chart.data.datasets.forEach((dataset) => {
+      dataset.data.shift();
+  });
+  chart.update();
+}

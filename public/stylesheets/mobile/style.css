@@ -19,9 +19,11 @@
 }
 
 .Logo {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  display: flex;
+
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .Logo img {
@@ -29,23 +31,230 @@
   height: 25px;
 }
 
+.Logo h2 {
+  color: var(--light-Blue);
+  margin-left: 20px;
+}
+
 @media screen and (max-width: 600px) {
-  .welcome-container {
-    width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
+
+  #Container {
+    display: flex;
+    flex-direction: column;
   }
-  
-  #WelcomePage, .next-page {
-    display: inline-block;
-    width: 100%;
+
+  #DetectionPage {
     height: 100vh;
+    width: 100vw;
+    background-color: #18181B;
   }
   
-  .next-page {
-    background-color: #ccc;
+  #Chart {
+    width: 90vw;
+  }
+
+  #line {
+    height: 50vh;
+    width: 100%;
+
+    object-fit: fill;
   }
   
-  /* aggiungi altri stili CSS per personalizzare il look del tuo container */
-    
+  #DetectionPage .Logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  #DetectionContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Legend {
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    margin-top: 10px;
+  }
+
+
+  #Legend #Air,
+  #Gas,
+  #CO2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #Air p {
+    color: var(--white);
+  }
+
+  #Air div {
+    background-color: var(--white);
+  }
+
+  #Gas p {
+    color: #6F9AAB;
+  }
+
+  #Gas div {
+    background-color: #6F9AAB;
+  }
+
+  #CO2 p {
+    color: #6F9AAB;
+  }
+
+  #CO2 div {
+    background-color: #6F9AAB;
+  }
+
+  #Legend #AirLegend,
+  #GasLegend,
+  #CO2Legend {
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+  }
+
+  #InformationPage {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: #41424C;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  #InformationLogo {
+    display: flex;
+
+    position: relative;
+    top: 10px;
+    left: 10px;
+  }
+
+  #InformationLogo h2 {
+    color: var(--light-Blue);
+    margin-left: 20px;
+  }
+
+  #InformationLogo img {
+    width: 25px;
+    height: 25px;
+  }
+
+  #InformationContainer {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+  }
+
+  #InformationContainer p {
+    color: var(--white);
+    margin-left: 30px;
+    margin-top: 30%;
+  }
+
+  #ComponentsPage {
+    height: 100vh;
+    width: 100vw;
+    background-color: #292A33;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  #ComponentsLogo {
+    display: flex;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  #ComponentsLogo h2 {
+    color: var(--light-Blue);
+    margin-left: 20px;
+  }
+
+  #ComponentsLogo img {
+    width: 25px;
+    height: 25px;
+  }
+
+  #ComponentsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 100%;
+  }
+
+  #ComponentsPage p{
+    color: var(--white);
+    margin-left: 30px;
+  }
+
+  #BreadBoardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  #BreadBoardImg {
+    height: 150px;
+    width: 150px;
+  }
+
+  #BreadBoardImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  
+  }
+
+  #PhotonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #PhotonImg {
+    height: 170px;
+    width: 170px;
+  }
+
+  #PhotonImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  
+  }
+
+  #Mq-2Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #Mq-2Img {
+    height: 170px;
+    width: 170px;
+  }
+
+  #Mq-2Img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  
+  }
+  
+
 }

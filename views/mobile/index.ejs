@@ -14,25 +14,100 @@
   <title>Particle</title>
 </head>
 
-<body>
-  <div class="welcome-container">
-    <div id="WelcomePage" class="Center">
-      <div class="Logo">
-        <img src="images/favicon.ico" alt="" srcset="">
+<%var logo={image: "images/favicon.ico" , text: "Photon" }%>
+
+  <body>
+    <!-- <div id="WelcomePage">
+    <div class="Logo">
+      <img src="images/favicon.ico" alt="" srcset="">
+    </div>
+    <h1>Welcome</h1>
+  </div> -->
+
+    <div id="Container">
+      <div id="DetectionPage" class="Center">
+        <div class="Logo">
+          <img src="<%= logo.image %>" alt="Logo">
+          <h2>
+            <%= logo.text %>
+          </h2>
+        </div>
+        <div id="ChartContainer">
+          <div id="Chart">
+            <canvas id="line"></canvas>
+          </div>
+          <div id="Legend">
+            <div id="Air">
+              <p>Clean Air</p>
+              <div id="AirLegend"></div>
+            </div>
+            <div id="Gas">
+              <p>Gas</p>
+              <div id="GasLegend"></div>
+            </div>
+            <div id="CO2">
+              <p>CO2</p>
+              <div id="CO2Legend"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1>Welcome</h1>
+    
+      <div id="ComponentsPage">
+        <div id="ComponentsLogo">
+          <img src="<%= logo.image %>" alt="Logo">
+          <h2>
+            Components
+          </h2>
+        </div>
+        <div id="ComponentsContainer">
+          <div id="BreadBoardContainer">
+            <div id="BreadBoardImg">
+              <img src="images/BreadBoard.png" alt="" srcset="">
+            </div>
+            <p>BreadBoard</p>
+          </div>
+          <div id="PhotonContainer">
+            <div id="PhotonImg">
+              <img src="images/Photon.png" alt="" srcset="">
+            </div>
+            <p>Photon</p>
+          </div>
+          <div id="Mq-2Container">
+            <div id="Mq-2Img">
+              <img src="images/Mq-2.png" alt="" srcset="">
+            </div>
+            <p>Mq-2</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="next-page">
-      <!-- contenuto della prossima pagina -->
+
+
+    <div id="InformationPage">
+      <div id="InformationLogo">
+        <img src="<%= logo.image %>" alt="Logo">
+        <h2>
+          Information
+        </h2>
+      </div>
+
+      <div id="InformationContainer" class="Center">
+        <h2>Titolo</h2>
+        <div id="Information">
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ipsa soluta voluptates placeat
+            eveniet cum neque reprehenderit hic unde tempora ullam provident, assumenda aliquid ex recusandae eos quas
+            beatae sequi.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
+  </body>
 
-
-</body>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-<script src="/scripts/mobile/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="/scripts/mobile/script.js"></script>
 
 </html>
